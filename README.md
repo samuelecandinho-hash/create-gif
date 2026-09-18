@@ -2,7 +2,7 @@
 
 Projeto desenvolvido em **Python** para criar arquivos **GIF a partir de imagens**, utilizando a biblioteca **ImageIO**.
 
-O projeto demonstra como carregar múltiplas imagens, armazená-las em uma lista e gerar um GIF com duração definida para cada quadro.
+O programa carrega imagens `.jpg` e utiliza essas imagens como quadros para gerar uma animação em formato `.gif`.
 
 ## 🛠️ Tecnologias utilizadas
 
@@ -11,37 +11,44 @@ O projeto demonstra como carregar múltiplas imagens, armazená-las em uma lista
 
 ## 🎯 Objetivo
 
-O objetivo deste projeto é demonstrar como criar um GIF utilizando imagens como quadros de uma animação.
+O objetivo deste projeto é aprender como criar um GIF utilizando imagens com Python.
 
 O programa:
 
-1. Define os caminhos das imagens.
-2. Carrega cada imagem utilizando o ImageIO.
+1. Define as imagens que serão utilizadas.
+2. Carrega as imagens com o ImageIO.
 3. Armazena as imagens em uma lista.
-4. Gera um arquivo `.gif`.
-5. Define a duração de cada imagem.
+4. Cria um arquivo GIF.
+5. Define o tempo de exibição de cada imagem.
 6. Configura o GIF para repetir continuamente.
 
-## ▶️ Execução
 
-Após instalar as dependências, execute o arquivo Python:
+Após a execução, o arquivo `Natan.gif` será criado na mesma pasta do programa.
 
-```bash
-python main.py
+## 💻 Código
+
+```python
+import imageio.v3 as iio
+
+arquivoImagens = ['normal.jpg', 'jumpcare.jpg']
+
+Imagens = []
+
+for arquivoImagem in arquivoImagens:
+    Imagens.append(iio.imread(arquivoImagem))
+
+iio.imwrite('Natan.gif', Imagens, duration=500, loop=0)
 ```
 
-O programa irá carregar as imagens presentes na pasta `Create_gif` e gerar o arquivo GIF.
+## 🔎 Como funciona
 
 ### Definição das imagens
 
 ```python
-arquivoImagens = [
-    'Create_gif/normal.jpg',
-    'Create_gif/jumpcare.jpg'
-]
+arquivoImagens = ['normal.jpg', 'jumpcare.jpg']
 ```
 
-Define os caminhos das imagens que serão utilizadas na criação do GIF.
+Define as imagens que serão utilizadas para criar o GIF.
 
 ### Carregamento das imagens
 
@@ -52,45 +59,42 @@ for arquivoImagem in arquivoImagens:
     Imagens.append(iio.imread(arquivoImagem))
 ```
 
-O programa percorre os arquivos definidos e utiliza `iio.imread()` para carregar cada imagem. As imagens são armazenadas na lista `Imagens`.
+O `for` percorre cada imagem definida em `arquivoImagens`.
+
+A função `iio.imread()` realiza a leitura da imagem e adiciona o resultado à lista `Imagens`.
 
 ### Criação do GIF
 
 ```python
-iio.imwrite(
-    'Create_gif/Natan.gif',
-    Imagens,
-    duration=500,
-    loop=0
-)
+iio.imwrite('Natan.gif', Imagens, duration=500, loop=0)
 ```
 
-O método `iio.imwrite()` cria o arquivo GIF utilizando as imagens carregadas.
+O `iio.imwrite()` cria o arquivo GIF utilizando as imagens carregadas.
 
-* `Natan.gif`: nome do arquivo de saída.
-* `duration=500`: cada imagem permanece durante 500 milissegundos.
-* `loop=0`: faz o GIF repetir continuamente.
+* `Natan.gif` → nome do arquivo gerado.
+* `duration=500` → cada imagem é exibida por 500 milissegundos.
+* `loop=0` → o GIF será reproduzido continuamente.
 
 ## 🖼️ Resultado
 
-Após a execução, será criado o arquivo:
+Ao executar o programa, será criado:
 
 ```text
-Create_gif/Natan.gif
+Natan.gif
 ```
 
-O arquivo contém as imagens utilizadas pelo programa organizadas como uma animação GIF.
+O GIF utiliza `normal.jpg` e `jumpcare.jpg` como quadros da animação.
 
 ## 📚 Aprendizados
 
-Este projeto permite praticar:
+Com este projeto, é possível praticar:
 
 * Manipulação de imagens com Python;
-* Leitura de arquivos de imagem;
+* Leitura de arquivos `.jpg`;
 * Utilização de listas;
 * Estruturas de repetição;
-* Instalação e utilização de bibliotecas externas;
-* Criação de arquivos GIF;
+* Uso de bibliotecas externas;
+* Criação de arquivos `.gif`;
 * Configuração de duração e repetição de animações.
 
 ## 👨‍💻 Autor
@@ -98,6 +102,7 @@ Este projeto permite praticar:
 **Samuel**
 
 Estudante de Desenvolvimento de Software, com interesse em programação, tecnologia e desenvolvimento de soluções.
+
 ---
 
-⭐ Se este projeto foi útil para você, considere deixar uma estrela no repositório.
+⭐ Se este projeto foi útil, considere deixar uma estrela no repositório.
