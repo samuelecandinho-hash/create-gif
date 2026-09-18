@@ -22,40 +22,6 @@ O programa:
 5. Define a duração de cada imagem.
 6. Configura o GIF para repetir continuamente.
 
-## 📂 Estrutura do projeto
-
-```text
-create-gif-com-python/
-│
-├── Create_gif/
-│   ├── normal.jpg
-│   ├── jumpcare.jpg
-│   └── Natan.gif
-│
-├── main.py
-└── README.md
-```
-
-## ⚙️ Instalação
-
-### 1. Clone o repositório
-
-```bash
-git clone https://github.com/samuelecandinho-hash/create-gif-com-python.git
-```
-
-### 2. Acesse a pasta do projeto
-
-```bash
-cd create-gif-com-python
-```
-
-### 3. Instale o ImageIO
-
-```bash
-pip install imageio
-```
-
 ## ▶️ Execução
 
 Após instalar as dependências, execute o arquivo Python:
@@ -65,39 +31,6 @@ python main.py
 ```
 
 O programa irá carregar as imagens presentes na pasta `Create_gif` e gerar o arquivo GIF.
-
-## 💻 Código
-
-```python
-import imageio.v3 as iio
-
-arquivoImagens = [
-    'Create_gif/normal.jpg',
-    'Create_gif/jumpcare.jpg'
-]
-
-Imagens = []
-
-for arquivoImagem in arquivoImagens:
-    Imagens.append(iio.imread(arquivoImagem))
-
-iio.imwrite(
-    'Create_gif/Natan.gif',
-    Imagens,
-    duration=500,
-    loop=0
-)
-```
-
-## 🔎 Como funciona
-
-### Importação do ImageIO
-
-```python
-import imageio.v3 as iio
-```
-
-Importa o módulo `imageio.v3`, utilizado para leitura e escrita de arquivos de imagem.
 
 ### Definição das imagens
 
@@ -165,10 +98,6 @@ Este projeto permite praticar:
 **Samuel**
 
 Estudante de Desenvolvimento de Software, com interesse em programação, tecnologia e desenvolvimento de soluções.
-
-🔗 **GitHub:**
-https://github.com/samuelecandinho-hash
-
 ---
 
 ⭐ Se este projeto foi útil para você, considere deixar uma estrela no repositório.
